@@ -1,0 +1,30 @@
+
+.title-view-images{
+  margin-bottom: 20px;
+}
+.conteiner-images{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; 
+}
+.uploaded-image-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(25% - 16px); /* Adjust the width as needed, 25% for 4 items per row */
+  box-sizing: border-box;
+  max-height: 200px;
+  margin-bottom: 20px;
+}
+.uploaded-image-container img{
+  max-width: 100%;
+  max-height: 90px;
+  display: block;
+}
+
+.uploaded-image-container p {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}

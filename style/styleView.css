@@ -1,0 +1,67 @@
+body{
+  width: 100%;
+  position: relative;
+  min-height: 540px;
+}
+main{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.container{
+  width: 100%;
+  flex: 1;
+  flex-grow: 1;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+th, td {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background-color: #f4f4f4;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+tr:hover {
+  background-color: #f1f1f1;
+}
+caption {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.button-div{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.refresh-button{
+  padding: 8px 16px;
+  background-color: #f4f4f4;
+  border: 1px solid #49464641;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.refresh-button:hover{
+  background-color: #f1f1f1;
+}
+
+.action-button{
+  margin-left: 5px;
+}
