@@ -1,6 +1,6 @@
 <?php
-include './inc/header.php';
 require_once('./inc/database.php');
+include './inc/header.php';
 
 $username = $_POST['username'];
 $password = hash('sha512', $_POST['password']);
