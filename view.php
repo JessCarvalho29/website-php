@@ -69,6 +69,13 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
               Record deleted successfully!
             </div>";
       }
+      if (isset($_GET['msg3']) == "signin") {
+        $fname = $_COOKIE['firstName'];
+        $lname = $_COOKIE['lastName'];
+        echo "<div>
+              Welcome back, $fname $lname!
+            </div>";
+      }
       ?>
     </div>
 
