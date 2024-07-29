@@ -3,6 +3,7 @@ require_once('./inc/database.php');
 require './inc/header.php';
 
 // Sign Up
+if (isset($_POST['signup'])){
 $firstName = $_POST['first_name'];
 $lastName = $_POST['last_name'];
 $username = $_POST['username'];
@@ -44,8 +45,10 @@ if($validateInformations){
 
   // header("Location: signin.php"); 	
 }
+}
 
  // Sign In
+if (isset($_POST['signin'])){
 $username = $_POST['username'];
 $password = hash('sha512', $_POST['password']);
 
@@ -84,6 +87,7 @@ if($validateInformations){
   }
 
 }
+}
 
 ?>
 
@@ -91,22 +95,22 @@ if($validateInformations){
   <div class="row" >
     <div class="column">
       <h3>Sign up</h3>
-      <form class="form-sign" method="post" action="./validate-signup.php">
+      <form class="form-sign" method="post" action="">
             <input class="text-input" name="first_name" type="text" placeholder="First Name" required />
             <input class="" name="last_name" type="text" placeholder="Last Name" required />
             <input class="" name="username" type="text" placeholder="Username" required />
             <input class="" name="password" type="password" placeholder="Password" required />
             <input class="" name="confirm" type="password" placeholder="Confirm Password" required />
-            <input class="btn btn-light" type="submit" name="submit" value="Register" />
+            <input class="btn btn-light" type="submit" name="signup" value="Register" />
       </form>
     </div>
 
     <div class="column">
       <h3>Sign in</h3>
-      <form class="form-sign" method="post" action="./validate-signin.php">
+      <form class="form-sign" method="post" action="">
             <input class="" name="username" type="text" placeholder="Username" required />
             <input class="" name="password" type="password" placeholder="Password" required />
-            <input class="" type="submit" value="Login" />
+            <input class="" type="submit" name="signin" value="Login" />
       </form>
     </div>
   </div>
