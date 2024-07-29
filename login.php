@@ -1,6 +1,6 @@
 <?php
 require_once('./inc/database.php');
-// require './inc/header.php';
+require './inc/header.php';
 
 // Sign Up
 if (isset($_POST['signup'])){
@@ -81,7 +81,8 @@ if($validateInformations){
     setcookie('firstName', $firstName, time() + 30*60, '/');
     setcookie('lastName', $lastName, time() + 30*60, '/');
 
-    header('Location: view.php');
+    echo "<p>You're Logged In</p>";
+    // header('Location: view.php');
 
   } else {
     echo '<p>Invalid Login</p>';
@@ -90,7 +91,7 @@ if($validateInformations){
 }
 }
 
-require './inc/header.php';
+// require './inc/header.php';
 
 
 ?>
