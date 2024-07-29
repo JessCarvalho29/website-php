@@ -1,7 +1,7 @@
 <?php
 require_once('./inc/database.php');
 require './inc/header.php';
-// session_start();
+session_start();
 
 // Sign Up
 if (isset($_POST['signup'])){
