@@ -1,6 +1,6 @@
 <?php
-require './inc/header.php';
 require_once('./inc/database.php');
+require './inc/header.php';
 
 $firstName = $_POST['first_name'];
 $lastName = $_POST['last_name'];
