@@ -1,6 +1,6 @@
 <?php
-include './inc/header.php';
 require_once('./inc/database.php');
+include './inc/header.php';
 
 if (isset($_GET['msg1']) == "register_order") {
   echo "<div> Order recorded! Please, upload the payment comprovant.</div>";
