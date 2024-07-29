@@ -81,7 +81,7 @@ if($validateInformations){
     setcookie('firstName', $firstName, time() + 30*60, '/');
     setcookie('lastName', $lastName, time() + 30*60, '/');
 
-    echo "<p>You're Logged In</p>";
+    // echo "<p>You're Logged In</p>";
     // header('Location: view.php');
 
   } else {
@@ -112,7 +112,7 @@ if($validateInformations){
 
     <div class="column">
       <h3>Sign in</h3>
-      <form class="form-sign" method="post" action="">
+      <form class="form-sign" method="post" action="view.php">
             <input class="" name="username" type="text" placeholder="Username" required />
             <input class="" name="password" type="password" placeholder="Password" required />
             <input class="" type="submit" name="signin" value="Login" />
