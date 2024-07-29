@@ -10,7 +10,7 @@ class Database
 
   public function connect_db()
   {
-    $this->connection = mysqli_connect('localhost', 'root', '', 'pizza_delivery');
+    $this->connection = mysqli_connect('project-php.mysql.database.azure.com', 'dbProjectPHP', 'PizzaDelivery@', 'pizza_delivery');
   }
 
   public function getData()
