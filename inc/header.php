@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +18,6 @@
 </head>
 
 <?php
-session_start();
-
 if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
   // session_unset();
   // session_destroy();
