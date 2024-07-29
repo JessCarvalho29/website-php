@@ -71,7 +71,7 @@ if($validateInformations){
 
   if(isset($result['COUNT(username)']) && !empty($result['COUNT(username)'])){
 
-    session_start();
+    // session_start();
     $_SESSION['timeout'] = time() + 30*60;
 
     $_SESSION['user_id'] = $result['user_id'];
