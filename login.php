@@ -1,6 +1,6 @@
 <?php
 require_once('./inc/database.php');
-require './inc/header.php';
+// require './inc/header.php';
 
 // Sign Up
 if (isset($_POST['signup'])){
@@ -43,6 +43,7 @@ if($validateInformations){
 
   $database->executeSignin($firstName, $lastName, $username, $password);
 
+  echo '<p>Successfully Registred! Please, Sign In</p>';
   // header("Location: signin.php"); 	
 }
 }
@@ -88,6 +89,9 @@ if($validateInformations){
 
 }
 }
+
+require './inc/header.php';
+
 
 ?>
 
