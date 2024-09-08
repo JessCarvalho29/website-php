@@ -23,7 +23,7 @@ if($validateInformations){
 
   $result = mysqli_fetch_assoc($DBreturn);
 
-  if(isset($result['COUNT(username)']) && !empty($result['COUNT(username)'])){
+  if(isset($result['username']) && !empty($result['username'])){
 
     session_start();
     $_SESSION['timeout'] = time() + 30*60;
