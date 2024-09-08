@@ -1,7 +1,9 @@
 <?php
 require_once('./inc/database.php');
 require './inc/header.php';
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 
 // Sign Up
 if (isset($_POST['signup'])){
