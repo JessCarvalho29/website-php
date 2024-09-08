@@ -51,7 +51,7 @@ class Database
 
   public function getLoginInfo($username, $password)
   {
-    $query = "SELECT COUNT(username), user_id, username, firstName, lastName FROM loginsInfo WHERE username = '$username' AND password = '$password';";
+    $query = "SELECT username, user_id, username, firstName, lastName FROM loginsInfo WHERE username = '$username' AND password = '$password';";
     $result = $this->connection->query($query);
     return $result;
   }
