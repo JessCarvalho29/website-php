@@ -23,6 +23,8 @@ if($validateInformations){
 
   $result = mysqli_fetch_assoc($DBreturn);
 
+  echo $result;
+
   if(isset($result['username']) && !empty($result['username'])){
 
     session_start();
