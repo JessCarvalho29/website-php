@@ -23,7 +23,7 @@ if($validateInformations){
 
   $result = mysqli_fetch_assoc($DBreturn);
 
-  echo $result;
+  echo $result['username'];
 
   if(isset($result['username']) && !empty($result['username'])){
 
