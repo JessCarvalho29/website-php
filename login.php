@@ -47,7 +47,6 @@ if($validateInformations){
   $database->executeSignin($firstName, $lastName, $username, $password);
 
   echo '<p>Successfully Registred! Please, Sign In</p>';
-  // header("Location: signin.php"); 	
 }
 }
 
@@ -60,6 +59,7 @@ $validateInformations = true;
 
 if (empty($username)) {
   echo '<p>Username is a required information to sign in</p>';
+
   $validateInformations = false;
 }
 if (empty($password)) {
@@ -72,9 +72,8 @@ if($validateInformations){
 
   $result = mysqli_fetch_assoc($DBreturn);
 
-  if(isset($result['COUNT(username)']) && !empty($result['COUNT(username)'])){
+  if(isset($result['username']) && !empty($result['username'])){
 
-    // session_start();
     $_SESSION['timeout'] = time() + 30*60;
 
     $_SESSION['user_id'] = $result['user_id'];
@@ -84,7 +83,6 @@ if($validateInformations){
     setcookie('firstName', $firstName, time() + 30*60, '/');
     setcookie('lastName', $lastName, time() + 30*60, '/');
 
-    // echo "<p>You're Logged In</p>";
     header('Location: view.php?msg3=signin');
 
   } else {
@@ -93,9 +91,6 @@ if($validateInformations){
 
 }
 }
-
-// require './inc/header.php';
-
 
 ?>
 
