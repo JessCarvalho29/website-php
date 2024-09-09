@@ -7,9 +7,9 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Sign Up
 if (isset($_POST['signup'])){
-$firstName = $_POST['first_name'];
-$lastName = $_POST['last_name'];
-$username = $_POST['username'];
+$firstName = strtolower($_POST['first_name']);
+$lastName = strtolower($_POST['last_name']);
+$username = strtolower($_POST['username']);
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirm'];
 
@@ -52,7 +52,7 @@ if($validateInformations){
 
  // Sign In
 if (isset($_POST['signin'])){
-$username = $_POST['username'];
+$username = strtolower($_POST['username']);
 $password = hash('sha512', $_POST['password']);
 
 $validateInformations = true;
@@ -80,10 +80,10 @@ if($validateInformations){
     $firstName = $result['firstName'];
     $lastName = $result['lastName'];
 
+    header('Location: view.php?msg3=signin');
+
     setcookie('firstName', $firstName, time() + 30*60, '/');
     setcookie('lastName', $lastName, time() + 30*60, '/');
-
-    header('Location: view.php?msg3=signin');
 
   } else {
     echo '<p>Invalid Login</p>';
