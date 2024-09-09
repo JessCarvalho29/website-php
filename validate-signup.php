@@ -34,7 +34,7 @@ if ((empty($password)) || ($password != $confirmPassword)) {
 $validationUsername = $database->validateUsername($username);
 $row = mysqli_fetch_assoc($validationUsername);
 
-if(isset($row['COUNT(username)']) && !empty($row['COUNT(username)'])){
+if(isset($row['username']) && !empty($row['username'])){
   echo '<p>'.$username.' username already exists. Please try another one.</p>';
   // echo '<a href="login.php">Come back to register</a>';
   $validateInformations = false;
