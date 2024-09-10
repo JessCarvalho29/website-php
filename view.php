@@ -1,14 +1,18 @@
 <?php
+require './inc/header.php';
 require_once('./inc/database.php');
-include './inc/header.php';
 
 if (!empty($_GET['deleteID'])) {
   $deleteId = $_GET['deleteID'];
   $database->deleteRecord($deleteId);
   header("Location:view.php?msg2=delete");
+  exit();
 }
 
-if (session_status() == PHP_SESSION_NONE) {
+echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+echo session_status();
+
+if (session_status() == PHP_SESSION_NONE || (session_status() == PHP_SESSION_ACTIVE && !isset($_SESSION['user_id']))) {
 ?>
   <main>
 

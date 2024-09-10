@@ -21,6 +21,7 @@ if (isset($_POST['submitForm'])) {
   $result = $database->executeQuery($quantity, $size, $shape, $topping, $crust, $takeoutOrDelivery, $name, $phone);
   
   header('Location: index.php?msg1=register_order');
+  exit();
 
 }
 

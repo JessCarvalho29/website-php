@@ -20,10 +20,11 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 
 <?php
+
 if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
   if (session_status() == PHP_SESSION_ACTIVE) {
-    session_unset();
-    session_destroy();
+    // session_unset();
+    // session_destroy();
   }
 ?>
 

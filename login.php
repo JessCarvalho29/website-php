@@ -1,6 +1,6 @@
 <?php
 require_once('./inc/database.php');
-require './inc/header.php';
+require_once './inc/header.php';
 
 // Sign Up
 if (isset($_POST['signup'])) {
@@ -70,20 +70,21 @@ if (isset($_POST['signin'])) {
     $result = mysqli_fetch_assoc($DBreturn);
 
     if (isset($result['username']) && !empty($result['username'])) {
-      
-      if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-      }
-      
+
+      // if (session_status() == PHP_SESSION_NONE) {
+      //   session_start();
+      // }
+
       $_SESSION['timeout'] = time() + 30 * 60;
       $_SESSION['user_id'] = $result['user_id'];
+
       $firstName = $result['firstName'];
       $lastName = $result['lastName'];
 
-      header('Location: view.php?msg3=signin', true);
-
       setcookie('firstName', $firstName, time() + 30 * 60, '/');
       setcookie('lastName', $lastName, time() + 30 * 60, '/');
+      header('Location: view.php?msg3=signin', true);
+      exit();
     } else {
       echo '<p>Invalid Login</p>';
     }

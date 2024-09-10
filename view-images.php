@@ -12,6 +12,7 @@ if (!empty($_GET['deleteID'])) {
   $deleteId = $_GET['deleteID'];
   $database->deleteImage($deleteId);
   header("Location:view-images.php?msg1=delete");
+  exit();
 }
 
 if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {

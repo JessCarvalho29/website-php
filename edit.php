@@ -21,6 +21,7 @@ if (!empty($_POST)) {
   $id = $result['order_id'];
   $result = $database->updateRecord($quantity, $size, $shape, $topping, $crust, $takeoutOrDelivery, $name, $phone, $id);
   header("Location: view.php?msg1=update");
+  exit();
 }
 
 ?>
