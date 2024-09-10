@@ -1,7 +1,6 @@
 <?php
+session_start();
 require_once('./inc/database.php');
-require_once './inc/header.php';
-
 // Sign Up
 if (isset($_POST['signup'])) {
   $firstName = strtolower($_POST['first_name']);
@@ -91,6 +90,7 @@ if (isset($_POST['signin'])) {
   }
 }
 
+require_once './inc/header.php';
 ?>
 
 <main>
