@@ -1,5 +1,5 @@
 <?php
-require './inc/header.php';
+require_once './inc/header.php';
 require_once('./inc/database.php');
 
 if (!empty($_GET['deleteID'])) {

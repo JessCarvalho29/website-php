@@ -1,6 +1,6 @@
 <?php
 require_once('./inc/database.php');
-include './inc/header.php';
+require_once './inc/header.php';
 
 if (!empty($_GET['editID'])) {
   $editId = $_GET['editID'];

@@ -1,6 +1,5 @@
 <?php
 require_once('./inc/database.php');
-include './inc/header.php';
 
 if (isset($_GET['msg1']) == "register_order") {
   echo "<div> Order recorded! Please, upload the payment comprovant.</div>";
@@ -55,6 +54,8 @@ if (isset($_POST['submitImage'])) {
     }
   }
 }
+
+require_once './inc/header.php';
 ?>
 
 <main class="home-container">
