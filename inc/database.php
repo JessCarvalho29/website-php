@@ -1,4 +1,5 @@
 <?php
+require_once 'dotenvLoad.php';
 
 class Database
 {
@@ -10,8 +11,7 @@ class Database
 
   public function connect_db()
   {
-    $this->connection = mysqli_connect('project-php.mysql.database.azure.com', 'dbProjectPHP', 'PizzaDelivery@', 'pizza_delivery');
-    // $this->connection = mysqli_connect('localhost', 'root', '', 'pizza_delivery');
+    $this->connection = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
   }
 
   public function getData()

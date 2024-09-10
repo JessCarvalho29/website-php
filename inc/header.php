@@ -1,6 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 ?>
 
@@ -21,8 +21,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <?php
 if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
-  // session_unset();
-  // session_destroy();
+  if (session_status() == PHP_SESSION_ACTIVE) {
+    session_unset();
+    session_destroy();
+  }
 ?>
 
   <body>

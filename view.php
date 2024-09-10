@@ -8,9 +8,7 @@ if (!empty($_GET['deleteID'])) {
   header("Location:view.php?msg2=delete");
 }
 
-if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
-  session_unset();
-  session_destroy();
+if (session_status() == PHP_SESSION_NONE) {
 ?>
   <main>
 
@@ -112,7 +110,7 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
               <td><?php echo $result['client_name'] ?> </td>
               <td><?php echo $result['phone'] ?> </td>
               <td>
-              <button class="action-button" ><a href="edit.php?editID=<?php echo $result['order_id'] ?>"><i class="fa fa-pencil"></i></a></button>
+                <button class="action-button"><a href="edit.php?editID=<?php echo $result['order_id'] ?>"><i class="fa fa-pencil"></i></a></button>
                 <button class="action-button"><a href="view.php?deleteID=<?php echo $result['order_id'] ?>" onclick="return confirm('Are you sure?');"><i class="fa fa-trash"></i></a></button>
               </td>
             </tr>
