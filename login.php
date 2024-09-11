@@ -70,18 +70,15 @@ if (isset($_POST['signin'])) {
 
     if (isset($result['username']) && !empty($result['username'])) {
 
-      // if (session_status() == PHP_SESSION_NONE) {
-      //   session_start();
-      // }
-
-      $_SESSION['timeout'] = time() + 30 * 60;
+      $sessionTimeout = time() + 30 * 60;
+      $_SESSION['timeout'] = $sessionTimeout;
       $_SESSION['user_id'] = $result['user_id'];
 
       $firstName = $result['firstName'];
       $lastName = $result['lastName'];
 
-      setcookie('firstName', $firstName, time() + 30 * 60, '/');
-      setcookie('lastName', $lastName, time() + 30 * 60, '/');
+      setcookie('firstName', $firstName, $sessionTimeout, '/', secure: true, httponly: true);
+      setcookie('lastName', $lastName, $sessionTimeout, '/', secure: true, httponly: true);
       header('Location: view.php?msg3=signin', true);
       exit();
     } else {

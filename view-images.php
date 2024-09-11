@@ -15,9 +15,9 @@ if (!empty($_GET['deleteID'])) {
 }
 
 require_once './inc/header.php';
-if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
-  // session_unset();
-  // session_destroy();
+
+if (session_status() == PHP_SESSION_NONE || (session_status() == PHP_SESSION_ACTIVE && !isset($_SESSION['user_id']))) {
+
 ?>
 
   <main>
@@ -62,7 +62,6 @@ if (!isset($_SESSION['user_id']) || (time() > $_SESSION['timeout'])) {
     </div>
     <div class="conteiner-images">
       <?php
-      require_once('./inc/database.php');
 
       $DBreturn = $database->getDataImage();
 

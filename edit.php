@@ -1,6 +1,5 @@
 <?php
 require_once('./inc/database.php');
-require_once './inc/header.php';
 
 if (!empty($_GET['editID'])) {
   $editId = $_GET['editID'];
@@ -23,6 +22,8 @@ if (!empty($_POST)) {
   header("Location: view.php?msg1=update");
   exit();
 }
+
+require_once './inc/header.php';
 
 ?>
 

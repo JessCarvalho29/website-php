@@ -1,5 +1,4 @@
 <?php
-require_once './inc/header.php';
 require_once('./inc/database.php');
 
 if (!empty($_GET['deleteID'])) {
@@ -9,8 +8,7 @@ if (!empty($_GET['deleteID'])) {
   exit();
 }
 
-echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
-echo session_status();
+require_once './inc/header.php';
 
 if (session_status() == PHP_SESSION_NONE || (session_status() == PHP_SESSION_ACTIVE && !isset($_SESSION['user_id']))) {
 ?>
